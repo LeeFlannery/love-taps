@@ -66,7 +66,7 @@ export function LoveBlobs({ taskCount, goalMet, onFireworks, onAddKiss }: LoveBl
   const [lastTaskCount, setLastTaskCount] = useState(taskCount)
   const tapCountRef = useRef(0)
   const nextSurpriseRef = useRef(3 + Math.floor(Math.random() * 5))
-  const messageTimerRef = useRef<ReturnType<typeof setTimeout>>()
+  const messageTimerRef = useRef<ReturnType<typeof setTimeout> | undefined>(undefined)
 
   const triggerMessage = useCallback((msgs: string[]) => {
     if (messageTimerRef.current) clearTimeout(messageTimerRef.current)

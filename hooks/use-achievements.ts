@@ -63,6 +63,7 @@ export function useAchievements(tasks: Task[]) {
         weeklyGoalMet: true,
         lastCelebrated: Date.now(),
         totalWeeksCompleted: achievement.totalWeeksCompleted + 1,
+        resetAt: null,
       }
       setAchievement(newState)
       saveAchievements(newState)
